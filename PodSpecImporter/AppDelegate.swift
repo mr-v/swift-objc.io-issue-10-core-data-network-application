@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  PodSpecImporter
+//  Pods
 //
 //  Created by Witold Skibniewski on 04/12/14.
 //  Copyright (c) 2014 Witold Skibniewski. All rights reserved.
