@@ -10,6 +10,9 @@ import Foundation
 
 extension Pod {
     func loadFromJSONObject(JSONObject: NSDictionary) {
-
+        let name = JSONObject["name"] as String
+        let version = JSONObject["version"] as String
+        self.name = name + " " + version
+        summary = JSONObject["summary"] as String
     }
 }
