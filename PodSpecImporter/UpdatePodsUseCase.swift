@@ -11,8 +11,12 @@ import Foundation
 class UpdatePodsUseCase {
 
     let webService = WebJSONService(baseURLString: "http://localhost:4567/specs", defaultParameters: [String: Any]())
-    let importer: Importer!
+    let importer: Importer
 
+    init(importer: Importer) {
+        self.importer = importer
+    }
+    
     func execute() {
         let firstPage = 0
         fetchPods(firstPage) { [weak self] specs in

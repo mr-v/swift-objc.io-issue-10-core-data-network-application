@@ -16,15 +16,21 @@ class Importer {
         self.context = context
     }
 
-    func importPodSpecs(jsonSpecs: [NSDictionary]) {
-        let names = jsonSpecs.map { $0["name"] }
-        var existingSpecsRequest = NSFetchRequest(entityName: "PodSpec")
-        existingSpecsRequest.predicate = NSPredicate(format: "name IN \(names)")
+    func importPodSpecs(JSONSpecs: [NSDictionary]) {
+        let namesToImport = JSONSpecs.map{ $0["name"] }
+        var existingSpecsRequest = NSFetchRequest(entityName: "Pod")
+        existingSpecsRequest.predicate = NSPredicate(format: "name IN \(namesToImport)")
         var possibleError: NSError?
-        let result = context.executeFetchRequest(existingSpecsRequest, error: &possibleError)
+        let result = context.executeFetchRequest(existingSpecsRequest, error: &possibleError) as [Pod]
         if let error = possibleError {
             return // + log
         }
-
+        var existingPods = [String: Pod]()
+        for pod in result { existingPods[pod.name] = pod }
+        for data in JSONSpecs {
+            var existing = existingPods[data["name"] as String]
+            var pod = existing ?? NSEntityDescription.insertNewObjectForEntityForName("Pod", inManagedObjectContext: context) as Pod
+            pod.loadFromJSONObject(data)
+        }
     }
 }

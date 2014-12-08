@@ -12,7 +12,12 @@ extension Pod {
     func loadFromJSONObject(JSONObject: NSDictionary) {
         let name = JSONObject["name"] as String
         let version = JSONObject["version"] as String
-        self.name = name + " " + version
-        summary = JSONObject["summary"] as String
+        identifier = name + " " + version
+        self.name = name
+        self.version = version
+        homepage = JSONObject["homepage"] as String
+        source = JSONObject["source"]!["git"] as String
+        let authors = JSONObject["authors"] as [String: String]
+        self.authors = ", ".join(authors.keys)
     }
 }
