@@ -73,11 +73,10 @@ class PodTests: XCTestCase {
     private func makePod() -> Pod? {
         let model = makeCoreDataModel()
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
-        var possibleError: NSError?
-        coordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil, error: &possibleError)
-        if let error = possibleError {
-            println(error)
-            abort()
+        tryWithError { coordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil, error: $0) }
+            .onError {
+                println($0)
+                abort()
         }
 
         context = NSManagedObjectContext()

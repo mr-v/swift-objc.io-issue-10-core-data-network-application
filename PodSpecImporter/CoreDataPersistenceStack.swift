@@ -18,33 +18,30 @@ class PersistenceStack {
         context = setupContextWithConcurrencyType(.MainQueueConcurrencyType, model: model, storeURL: storeURL)
         backgroundContext = setupContextWithConcurrencyType(.PrivateQueueConcurrencyType, model: model, storeURL: storeURL)
 
-       listenForNotifications()
+        listenForNotifications()
     }
 
     private func setupContextWithConcurrencyType(type: NSManagedObjectContextConcurrencyType, model: NSManagedObjectModel, storeURL: NSURL) -> NSManagedObjectContext {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
-        var possibleError: NSError?
-        coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: &possibleError)
-        if let error = possibleError {
-            abort()
-        }
+        tryWithError { coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: $0) }
+            .onError { _ in abort() }
         var context = NSManagedObjectContext(concurrencyType: type)
         context.persistentStoreCoordinator = coordinator
         return context
     }
 
     private func listenForNotifications() {
-        NSNotificationCenter.defaultCenter().addObserverForName(NSManagedObjectContextDidSaveNotification, object: nil, queue: nil) {
+        NSNotificationCenter.defaultCenter().addObserverForName(NSManagedObjectContextDidSaveNotification, object: backgroundContext, queue: nil) {
             [weak self] notification in
             if let context = self?.context {
-                if context != notification.object as? NSManagedObjectContext {
-                    context.performBlock { context.mergeChangesFromContextDidSaveNotification(notification) }
-                }
+                context.performBlock { context.mergeChangesFromContextDidSaveNotification(notification) }
             }
         }
         NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationWillTerminateNotification, object: nil, queue: nil) {
-            [weak self] _ in self?.context.save(nil); return
+            [weak self] _ in
+            tryWithError { self?.context.save($0) }
+                .onError { error in println("termination save error: \(error)") }
+            return
         }
     }
-
 }

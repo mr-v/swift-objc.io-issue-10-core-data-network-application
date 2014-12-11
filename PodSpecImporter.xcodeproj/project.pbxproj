@@ -28,8 +28,8 @@
 		EA9B36851A30F8C400CC5448 /* Pod+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B367F1A30F75000CC5448 /* Pod+Extension.swift */; };
 		EA9B36881A31A41000CC5448 /* CoreDataPersistenceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36871A31A41000CC5448 /* CoreDataPersistenceStack.swift */; };
 		EA9B36891A31A41000CC5448 /* CoreDataPersistenceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36871A31A41000CC5448 /* CoreDataPersistenceStack.swift */; };
-		EAC693791A3616ED00A4FA99 /* ErrorReferenceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC693781A3616ED00A4FA99 /* ErrorReferenceHandler.swift */; };
-		EAC6937A1A36178900A4FA99 /* ErrorReferenceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC693781A3616ED00A4FA99 /* ErrorReferenceHandler.swift */; };
+		EAC693791A3616ED00A4FA99 /* ErrorReferenceHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC693781A3616ED00A4FA99 /* ErrorReferenceHandling.swift */; };
+		EAC6937A1A36178900A4FA99 /* ErrorReferenceHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC693781A3616ED00A4FA99 /* ErrorReferenceHandling.swift */; };
 		EAC6937D1A370C6F00A4FA99 /* PodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6937C1A370C6F00A4FA99 /* PodListViewController.swift */; };
 		EAC6937F1A370D2500A4FA99 /* FetchedResultsControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6937E1A370D2500A4FA99 /* FetchedResultsControllerDataSource.swift */; };
 		EAC693811A372E3900A4FA99 /* TableViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC693801A372E3900A4FA99 /* TableViewFetchedResultsControllerDelegate.swift */; };
@@ -70,7 +70,7 @@
 		EA9B367F1A30F75000CC5448 /* Pod+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pod+Extension.swift"; sourceTree = "<group>"; };
 		EA9B36811A30F78000CC5448 /* PodTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodTests.swift; sourceTree = "<group>"; };
 		EA9B36871A31A41000CC5448 /* CoreDataPersistenceStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataPersistenceStack.swift; sourceTree = "<group>"; };
-		EAC693781A3616ED00A4FA99 /* ErrorReferenceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorReferenceHandler.swift; sourceTree = "<group>"; };
+		EAC693781A3616ED00A4FA99 /* ErrorReferenceHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorReferenceHandling.swift; sourceTree = "<group>"; };
 		EAC6937C1A370C6F00A4FA99 /* PodListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PodListViewController.swift; path = GUI/PodListViewController.swift; sourceTree = "<group>"; };
 		EAC6937E1A370D2500A4FA99 /* FetchedResultsControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerDataSource.swift; sourceTree = "<group>"; };
 		EAC693801A372E3900A4FA99 /* TableViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 				EAC6937B1A370C4B00A4FA99 /* GUI */,
 				EA9B36761A30F2AD00CC5448 /* WebJSONService */,
 				EA9B36641A30EDBB00CC5448 /* AppDelegate.swift */,
-				EAC693781A3616ED00A4FA99 /* ErrorReferenceHandler.swift */,
+				EAC693781A3616ED00A4FA99 /* ErrorReferenceHandling.swift */,
 				EA9B36401A30ED7B00CC5448 /* Supporting Files */,
 			);
 			path = PodSpecImporter;
@@ -318,7 +318,7 @@
 				EA9B36691A30EDBB00CC5448 /* WebJSONService.swift in Sources */,
 				EA9B36781A30F2C000CC5448 /* Importer.swift in Sources */,
 				EAC693841A3732B700A4FA99 /* UIStoryboardInjector.swift in Sources */,
-				EAC693791A3616ED00A4FA99 /* ErrorReferenceHandler.swift in Sources */,
+				EAC693791A3616ED00A4FA99 /* ErrorReferenceHandling.swift in Sources */,
 				EAC6937F1A370D2500A4FA99 /* FetchedResultsControllerDataSource.swift in Sources */,
 				EA9B36801A30F75000CC5448 /* Pod+Extension.swift in Sources */,
 				EA9B36681A30EDBB00CC5448 /* UpdatePodsUseCase.swift in Sources */,
@@ -333,7 +333,7 @@
 				EA9B36891A31A41000CC5448 /* CoreDataPersistenceStack.swift in Sources */,
 				EA9B36851A30F8C400CC5448 /* Pod+Extension.swift in Sources */,
 				EA9B36711A30EDE700CC5448 /* WebJSONService.swift in Sources */,
-				EAC6937A1A36178900A4FA99 /* ErrorReferenceHandler.swift in Sources */,
+				EAC6937A1A36178900A4FA99 /* ErrorReferenceHandling.swift in Sources */,
 				EA9B36751A30EDE700CC5448 /* Result.swift in Sources */,
 				EAD5B83B1A35DE2800D81243 /* Pod.swift in Sources */,
 				EA9B366F1A30EDD900CC5448 /* PodsJSONServiceTests.swift in Sources */,

@@ -27,20 +27,20 @@ class Importer {
 
         context.performBlock { [weak self] in
             if let context = self?.context {
-                var possibleError: NSError?
-                let result = context.executeFetchRequest(existingSpecsRequest, error: &possibleError) as [Pod]
-                if let error = possibleError {
-                    return // + log
-                }
-                var existingPods = [String: Pod]()
-                for pod in result { existingPods[pod.identifier] = pod }
-                for data in JSONSpecs {
-                    let identifier: String! = self?.identifierFromData(data)
-                    var existing = existingPods[identifier]
-                    var pod = existing ?? NSEntityDescription.insertNewObjectForEntityForName("Pod", inManagedObjectContext: context) as Pod
-                    pod.loadFromJSONObject(data)
-                }
+                tryWithError { errorPointer in context.executeFetchRequest(existingSpecsRequest, error: errorPointer) as [Pod] }
+                    .onSuccess { result in
+                        var existingPods = [String: Pod]()
+                        for pod in result { existingPods[pod.identifier] = pod }
+                        for data in JSONSpecs {
+                            let identifier: String! = self?.identifierFromData(data)
+                            var existing = existingPods[identifier]
+                            var pod = existing ?? NSEntityDescription.insertNewObjectForEntityForName("Pod", inManagedObjectContext: context) as Pod
+                            pod.loadFromJSONObject(data)
+                        }
+                    }
+                    .onError { println("error on pods fetch: \($0)") }
             }
+
         }
     }
 

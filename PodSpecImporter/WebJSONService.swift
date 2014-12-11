@@ -34,23 +34,9 @@ class WebJSONService {
                 }
             }
 
-            var possibleError: NSError?
-            var deserialized = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &possibleError) as? NSDictionary
-            if let error = possibleError {
-                dispatchError()
-                return
-            }
-            if let jsonObject = deserialized {
-                if jsonObject["stat"] as? String == "fail" {
-                    dispatchError()
-                    return
-                }
-
-                dispatch_async(dispatch_get_main_queue()) { completionHandler(.OK(jsonObject)) }
-            } else {
-                dispatchError()
-            }
-
+            tryWithError{ NSJSONSerialization.JSONObjectWithData(data, options: nil, error: $0) as? NSDictionary }
+                .onError { _ in dispatchError() }
+                .onSuccess { jsonObject in dispatch_async(dispatch_get_main_queue()) { completionHandler(.OK(jsonObject!)) } }
         })
         task.resume()
     }

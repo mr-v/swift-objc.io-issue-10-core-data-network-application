@@ -1,5 +1,5 @@
 //
-//  ErrorReference.swift
+//  ErrorReferenceHandling
 //  PodSpecImporter
 //
 //  Created by Witold Skibniewski on 08/12/14.
