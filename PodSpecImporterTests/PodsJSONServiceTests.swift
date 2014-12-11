@@ -19,11 +19,13 @@ extension XCTestCase {
     }
 }
 
+// integration tests
 class PodsJSONServiceTests: XCTestCase {
 
     func test_PodsAPI_ResultContainsPodsSpecifications() {
         let expectaction = expectationWithDescription("")
         let service = makePodsAPIService()
+
         service.fetchJSON(["page": 0]) { result in
             expectaction.fulfill()
             switch result {
@@ -37,6 +39,7 @@ class PodsJSONServiceTests: XCTestCase {
     func test_PodsAPI_ResultContainsPagingData() {
         let expectaction = expectationWithDescription("")
         let service = makePodsAPIService()
+
         service.fetchJSON(["page": 0]) { result in
             expectaction.fulfill()
             switch result {

@@ -7,36 +7,28 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let inTests = NSClassFromString("XCTest") != nil
-        if inTests {
+        if let inTests: AnyClass = NSClassFromString("XCTest") {
             return true
         }
 
-        var possibleError: NSError?
-        let documentsDirectory = NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true, error: &possibleError)
-        if let error = possibleError {
-            println(error)
-            abort()
-        }
-
-        let storeURL = documentsDirectory!.URLByAppendingPathComponent("db.sqlite")
-        let modelURL = NSBundle.mainBundle().URLForResource("PodSpecModel", withExtension: "momd")!
-        let persistenceStack = PersistenceStack(modelURL: modelURL, storeURL: storeURL)
-
-        let importer = Importer(context: persistenceStack.backgroundContext)
-
-        UpdatePodsUseCase(importer: importer).execute()
+        let appBuilder = AppBuilder()
+        let storyboard:UIStoryboard = appBuilder.initializeStoryboard()
+        let rootVC = storyboard.instantiateInitialViewController() as UIViewController
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window!.rootViewController = rootVC
+        window!.makeKeyAndVisible()
 
         return true
     }
 
 }
+
 

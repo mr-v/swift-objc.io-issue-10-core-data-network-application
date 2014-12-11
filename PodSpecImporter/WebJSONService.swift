@@ -24,11 +24,9 @@ class WebJSONService {
 
     func fetchJSON(parameters: [String: Any], completionHandler: Result<NSDictionary> -> ())  {
         let request = urlRequestWithParameters(parameters)
-        let task = session.dataTaskWithRequest(request, completionHandler: { data, urlResponse, error in
-            func dispatchError() {
-                dispatch_async(dispatch_get_main_queue()) { completionHandler(.Error) }
-            }
 
+        let task = session.dataTaskWithRequest(request, completionHandler: { data, urlResponse, error in
+            let dispatchError = { dispatch_async(dispatch_get_main_queue()) { completionHandler(.Error) } }
             if let httpResponse = urlResponse as? NSHTTPURLResponse {
                 if httpResponse.statusCode != 200 {
                     dispatchError()

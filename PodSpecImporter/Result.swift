@@ -13,4 +13,5 @@ enum Result<T> {
     case Error
 }
 
-// add name and description to Error - as of now adding non-generic associated values causes compiler to crash (note: works well in playgrounds)
+// add name and description to Error - as of now adding non-generic associated values causes compiler to crash (note: worked well in playgrounds)
+// available workaround: boxing T

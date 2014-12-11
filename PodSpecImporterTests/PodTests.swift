@@ -13,39 +13,45 @@ class PodTests: XCTestCase {
     var context: NSManagedObjectContext!
 
     func test_loadFromJSONObject_ExtractsIdentifier() {
-        var pod: Pod! = makePodWithTestData()
+        let pod: Pod! = makePodWithTestData()
 
         XCTAssertEqual("AFNetworking 2.5.0", pod.identifier)
     }
 
     func test_loadFromJSONObject_ExtractsName() {
-        var pod: Pod! = makePodWithTestData()
+        let pod: Pod! = makePodWithTestData()
 
         XCTAssertEqual("AFNetworking", pod.name)
     }
 
     func test_loadFromJSONObject_ExtractsVersion() {
-        var pod: Pod! = makePodWithTestData()
+        let pod: Pod! = makePodWithTestData()
 
         XCTAssertEqual("2.5.0", pod.version)
     }
 
     func test_loadFromJSONObject_ExtractsAuthors() {
-        var pod: Pod! = makePodWithTestData()
+        let pod: Pod! = makePodWithTestData()
 
         XCTAssertEqual("Mattt Thompson", pod.authors)
     }
 
     func test_loadFromJSONObject_ExtractsHomepage() {
-        var pod: Pod! = makePodWithTestData()
+        let pod: Pod! = makePodWithTestData()
 
         XCTAssertEqual("https://github.com/AFNetworking/AFNetworking", pod.homepage)
     }
 
     func test_loadFromJSONObject_ExtractsSource() {
-        var pod: Pod! = makePodWithTestData()
+        let pod: Pod! = makePodWithTestData()
 
         XCTAssertEqual("https://github.com/AFNetworking/AFNetworking.git", pod.source)
+    }
+
+    func test_loadFromJSONObject_ExtractsAuthorsFromArray() {
+        let pod: Pod! = makePodWithAuthorsArrayTestData()
+
+        XCTAssertEqual("Dave Teare, Michael Fey, Rad Azzouz, Roustem Karimov", pod.authors)
     }
 
     // MARK: -
@@ -53,6 +59,14 @@ class PodTests: XCTestCase {
     private func makePodWithTestData() -> Pod? {
         var pod = makePod()
         pod?.loadFromJSONObject(makeTestPodSpecJSONObject())
+        return pod
+    }
+
+    private func makePodWithAuthorsArrayTestData() -> Pod? {
+        var pod = makePod()
+        var jsonObject = makeTestPodSpecJSONObject().mutableCopy() as NSMutableDictionary
+        jsonObject["authors"] = ["Dave Teare", "Michael Fey", "Rad Azzouz", "Roustem Karimov"]
+        pod?.loadFromJSONObject(jsonObject)
         return pod
     }
 

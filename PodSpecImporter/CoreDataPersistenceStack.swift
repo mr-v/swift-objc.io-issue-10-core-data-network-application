@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Witold Skibniewski. All rights reserved.
 //
 
-import Foundation
 import CoreData
+import UIKit
 
 class PersistenceStack {
-    private let context: NSManagedObjectContext!
+    let context: NSManagedObjectContext!
     let backgroundContext: NSManagedObjectContext!
 
     init(modelURL: NSURL, storeURL: NSURL) {
@@ -18,14 +18,7 @@ class PersistenceStack {
         context = setupContextWithConcurrencyType(.MainQueueConcurrencyType, model: model, storeURL: storeURL)
         backgroundContext = setupContextWithConcurrencyType(.PrivateQueueConcurrencyType, model: model, storeURL: storeURL)
 
-        NSNotificationCenter.defaultCenter().addObserverForName(NSManagedObjectContextDidSaveNotification, object: nil, queue: nil) {
-            [weak self] notification in
-            if let context = self?.context {
-                if context != notification.object as? NSManagedObjectContext {
-                    context.performBlock { context.mergeChangesFromContextDidSaveNotification(notification) }
-                }
-            }
-        }
+       listenForNotifications()
     }
 
     private func setupContextWithConcurrencyType(type: NSManagedObjectContextConcurrencyType, model: NSManagedObjectModel, storeURL: NSURL) -> NSManagedObjectContext {
@@ -39,4 +32,19 @@ class PersistenceStack {
         context.persistentStoreCoordinator = coordinator
         return context
     }
+
+    private func listenForNotifications() {
+        NSNotificationCenter.defaultCenter().addObserverForName(NSManagedObjectContextDidSaveNotification, object: nil, queue: nil) {
+            [weak self] notification in
+            if let context = self?.context {
+                if context != notification.object as? NSManagedObjectContext {
+                    context.performBlock { context.mergeChangesFromContextDidSaveNotification(notification) }
+                }
+            }
+        }
+        NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationWillTerminateNotification, object: nil, queue: nil) {
+            [weak self] _ in self?.context.save(nil); return
+        }
+    }
+
 }

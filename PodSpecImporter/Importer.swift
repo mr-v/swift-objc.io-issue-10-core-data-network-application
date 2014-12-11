@@ -17,20 +17,38 @@ class Importer {
     }
 
     func importPodSpecs(JSONSpecs: [NSDictionary]) {
-        let namesToImport = JSONSpecs.map{ $0["name"] }
+        var namesToImport = NSMutableSet()
+        for spec in JSONSpecs {
+            let identifier = identifierFromData(spec)  // TOOD: add test for pod with name "CCNXML 0.2.1" (no "version" key)
+            namesToImport.addObject(identifier)
+        }
         var existingSpecsRequest = NSFetchRequest(entityName: "Pod")
-        existingSpecsRequest.predicate = NSPredicate(format: "name IN \(namesToImport)")
-        var possibleError: NSError?
-        let result = context.executeFetchRequest(existingSpecsRequest, error: &possibleError) as [Pod]
-        if let error = possibleError {
-            return // + log
+        existingSpecsRequest.predicate = NSPredicate(format: "(identifier IN %@)", namesToImport)
+
+        context.performBlock { [weak self] in
+            if let context = self?.context {
+                var possibleError: NSError?
+                let result = context.executeFetchRequest(existingSpecsRequest, error: &possibleError) as [Pod]
+                if let error = possibleError {
+                    return // + log
+                }
+                var existingPods = [String: Pod]()
+                for pod in result { existingPods[pod.identifier] = pod }
+                for data in JSONSpecs {
+                    let identifier: String! = self?.identifierFromData(data)
+                    var existing = existingPods[identifier]
+                    var pod = existing ?? NSEntityDescription.insertNewObjectForEntityForName("Pod", inManagedObjectContext: context) as Pod
+                    pod.loadFromJSONObject(data)
+                }
+            }
         }
-        var existingPods = [String: Pod]()
-        for pod in result { existingPods[pod.name] = pod }
-        for data in JSONSpecs {
-            var existing = existingPods[data["name"] as String]
-            var pod = existing ?? NSEntityDescription.insertNewObjectForEntityForName("Pod", inManagedObjectContext: context) as Pod
-            pod.loadFromJSONObject(data)
-        }
+    }
+
+    func save() {
+        context.performBlock { [weak self] in self?.context.save(nil); return }
+    }
+
+    private func identifierFromData(data: NSDictionary) -> String {
+        return " ".join([data["name"] as String, data["version"] as? String ?? " "])
     }
 }

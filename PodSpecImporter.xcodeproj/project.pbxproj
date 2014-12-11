@@ -13,24 +13,31 @@
 		EA9B36681A30EDBB00CC5448 /* UpdatePodsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36621A30EDBB00CC5448 /* UpdatePodsUseCase.swift */; };
 		EA9B36691A30EDBB00CC5448 /* WebJSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36631A30EDBB00CC5448 /* WebJSONService.swift */; };
 		EA9B366A1A30EDBB00CC5448 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36641A30EDBB00CC5448 /* AppDelegate.swift */; };
-		EA9B366B1A30EDBB00CC5448 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36651A30EDBB00CC5448 /* ViewController.swift */; };
-		EA9B366C1A30EDBB00CC5448 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36661A30EDBB00CC5448 /* Dictionary.swift */; };
+		EA9B366C1A30EDBB00CC5448 /* Dictionary+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36661A30EDBB00CC5448 /* Dictionary+Merge.swift */; };
 		EA9B366D1A30EDBB00CC5448 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36671A30EDBB00CC5448 /* Result.swift */; };
-		EA9B366F1A30EDD900CC5448 /* PodsWebJSONServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B366E1A30EDD900CC5448 /* PodsWebJSONServiceTests.swift */; };
+		EA9B366F1A30EDD900CC5448 /* PodsJSONServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B366E1A30EDD900CC5448 /* PodsJSONServiceTests.swift */; };
 		EA9B36701A30EDE700CC5448 /* UpdatePodsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36621A30EDBB00CC5448 /* UpdatePodsUseCase.swift */; };
 		EA9B36711A30EDE700CC5448 /* WebJSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36631A30EDBB00CC5448 /* WebJSONService.swift */; };
-		EA9B36741A30EDE700CC5448 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36661A30EDBB00CC5448 /* Dictionary.swift */; };
+		EA9B36741A30EDE700CC5448 /* Dictionary+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36661A30EDBB00CC5448 /* Dictionary+Merge.swift */; };
 		EA9B36751A30EDE700CC5448 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36671A30EDBB00CC5448 /* Result.swift */; };
 		EA9B36781A30F2C000CC5448 /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36771A30F2C000CC5448 /* Importer.swift */; };
 		EA9B367C1A30F68700CC5448 /* PodSpecModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA9B367A1A30F68700CC5448 /* PodSpecModel.xcdatamodeld */; };
-		EA9B36801A30F75000CC5448 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B367F1A30F75000CC5448 /* Extensions.swift */; };
+		EA9B36801A30F75000CC5448 /* Pod+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B367F1A30F75000CC5448 /* Pod+Extension.swift */; };
 		EA9B36821A30F78000CC5448 /* PodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36811A30F78000CC5448 /* PodTests.swift */; };
 		EA9B36831A30F85600CC5448 /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36771A30F2C000CC5448 /* Importer.swift */; };
-		EA9B36851A30F8C400CC5448 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B367F1A30F75000CC5448 /* Extensions.swift */; };
+		EA9B36851A30F8C400CC5448 /* Pod+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B367F1A30F75000CC5448 /* Pod+Extension.swift */; };
 		EA9B36881A31A41000CC5448 /* CoreDataPersistenceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36871A31A41000CC5448 /* CoreDataPersistenceStack.swift */; };
 		EA9B36891A31A41000CC5448 /* CoreDataPersistenceStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B36871A31A41000CC5448 /* CoreDataPersistenceStack.swift */; };
+		EAC693791A3616ED00A4FA99 /* ErrorReferenceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC693781A3616ED00A4FA99 /* ErrorReferenceHandler.swift */; };
+		EAC6937A1A36178900A4FA99 /* ErrorReferenceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC693781A3616ED00A4FA99 /* ErrorReferenceHandler.swift */; };
+		EAC6937D1A370C6F00A4FA99 /* PodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6937C1A370C6F00A4FA99 /* PodListViewController.swift */; };
+		EAC6937F1A370D2500A4FA99 /* FetchedResultsControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC6937E1A370D2500A4FA99 /* FetchedResultsControllerDataSource.swift */; };
+		EAC693811A372E3900A4FA99 /* TableViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC693801A372E3900A4FA99 /* TableViewFetchedResultsControllerDelegate.swift */; };
+		EAC693841A3732B700A4FA99 /* UIStoryboardInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC693831A3732B700A4FA99 /* UIStoryboardInjector.swift */; };
 		EAD5B83A1A35DCE300D81243 /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B8391A35DCE300D81243 /* Pod.swift */; };
 		EAD5B83B1A35DE2800D81243 /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B8391A35DCE300D81243 /* Pod.swift */; };
+		EAE0C95C1A37543F00577E64 /* AppBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C95B1A37543F00577E64 /* AppBuilder.swift */; };
+		EAE0C95E1A375F2F00577E64 /* PodDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C95D1A375F2F00577E64 /* PodDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,17 +61,24 @@
 		EA9B36621A30EDBB00CC5448 /* UpdatePodsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatePodsUseCase.swift; sourceTree = "<group>"; };
 		EA9B36631A30EDBB00CC5448 /* WebJSONService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebJSONService.swift; sourceTree = "<group>"; };
 		EA9B36641A30EDBB00CC5448 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA9B36651A30EDBB00CC5448 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EA9B36661A30EDBB00CC5448 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		EA9B36661A30EDBB00CC5448 /* Dictionary+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Merge.swift"; sourceTree = "<group>"; };
 		EA9B36671A30EDBB00CC5448 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		EA9B366E1A30EDD900CC5448 /* PodsWebJSONServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodsWebJSONServiceTests.swift; sourceTree = "<group>"; };
+		EA9B366E1A30EDD900CC5448 /* PodsJSONServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodsJSONServiceTests.swift; sourceTree = "<group>"; };
 		EA9B36771A30F2C000CC5448 /* Importer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Importer.swift; sourceTree = "<group>"; };
 		EA9B36791A30F36900CC5448 /* KVCPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = KVCPlayground.playground; sourceTree = "<group>"; };
 		EA9B367B1A30F68700CC5448 /* PodSpecModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PodSpecModel.xcdatamodel; sourceTree = "<group>"; };
-		EA9B367F1A30F75000CC5448 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EA9B367F1A30F75000CC5448 /* Pod+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pod+Extension.swift"; sourceTree = "<group>"; };
 		EA9B36811A30F78000CC5448 /* PodTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodTests.swift; sourceTree = "<group>"; };
 		EA9B36871A31A41000CC5448 /* CoreDataPersistenceStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataPersistenceStack.swift; sourceTree = "<group>"; };
+		EAC693781A3616ED00A4FA99 /* ErrorReferenceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorReferenceHandler.swift; sourceTree = "<group>"; };
+		EAC6937C1A370C6F00A4FA99 /* PodListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PodListViewController.swift; path = GUI/PodListViewController.swift; sourceTree = "<group>"; };
+		EAC6937E1A370D2500A4FA99 /* FetchedResultsControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerDataSource.swift; sourceTree = "<group>"; };
+		EAC693801A372E3900A4FA99 /* TableViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
+		EAC693831A3732B700A4FA99 /* UIStoryboardInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIStoryboardInjector.swift; path = DependencyInjection/UIStoryboardInjector.swift; sourceTree = "<group>"; };
+		EAC693851A37493800A4FA99 /* runtimehackery.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = runtimehackery.playground; sourceTree = "<group>"; };
 		EAD5B8391A35DCE300D81243 /* Pod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
+		EAE0C95B1A37543F00577E64 /* AppBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppBuilder.swift; path = DependencyInjection/AppBuilder.swift; sourceTree = "<group>"; };
+		EAE0C95D1A375F2F00577E64 /* PodDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PodDetailTableViewController.swift; path = GUI/PodDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,19 +120,13 @@
 		EA9B363F1A30ED7B00CC5448 /* PodSpecImporter */ = {
 			isa = PBXGroup;
 			children = (
-				EA9B36641A30EDBB00CC5448 /* AppDelegate.swift */,
-				EA9B36771A30F2C000CC5448 /* Importer.swift */,
-				EA9B367F1A30F75000CC5448 /* Extensions.swift */,
-				EA9B36621A30EDBB00CC5448 /* UpdatePodsUseCase.swift */,
-				EA9B36651A30EDBB00CC5448 /* ViewController.swift */,
-				EAD5B8391A35DCE300D81243 /* Pod.swift */,
-				EA9B36491A30ED7B00CC5448 /* Images.xcassets */,
-				EA9B364B1A30ED7B00CC5448 /* LaunchScreen.xib */,
-				EA9B36461A30ED7B00CC5448 /* Main.storyboard */,
-				EA9B367A1A30F68700CC5448 /* PodSpecModel.xcdatamodeld */,
-				EA9B36401A30ED7B00CC5448 /* Supporting Files */,
+				EAA49F371A3A159E00949063 /* Application */,
+				EAC693821A3732A000A4FA99 /* DependencyInjection */,
+				EAC6937B1A370C4B00A4FA99 /* GUI */,
 				EA9B36761A30F2AD00CC5448 /* WebJSONService */,
-				EA9B36871A31A41000CC5448 /* CoreDataPersistenceStack.swift */,
+				EA9B36641A30EDBB00CC5448 /* AppDelegate.swift */,
+				EAC693781A3616ED00A4FA99 /* ErrorReferenceHandler.swift */,
+				EA9B36401A30ED7B00CC5448 /* Supporting Files */,
 			);
 			path = PodSpecImporter;
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 			children = (
 				EA9B36411A30ED7B00CC5448 /* Info.plist */,
 				EA9B36791A30F36900CC5448 /* KVCPlayground.playground */,
+				EAC693851A37493800A4FA99 /* runtimehackery.playground */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -136,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				EA9B36561A30ED7B00CC5448 /* Supporting Files */,
-				EA9B366E1A30EDD900CC5448 /* PodsWebJSONServiceTests.swift */,
+				EA9B366E1A30EDD900CC5448 /* PodsJSONServiceTests.swift */,
 				EA9B36811A30F78000CC5448 /* PodTests.swift */,
 			);
 			path = PodSpecImporterTests;
@@ -153,11 +162,47 @@
 		EA9B36761A30F2AD00CC5448 /* WebJSONService */ = {
 			isa = PBXGroup;
 			children = (
-				EA9B36631A30EDBB00CC5448 /* WebJSONService.swift */,
-				EA9B36661A30EDBB00CC5448 /* Dictionary.swift */,
+				EA9B36661A30EDBB00CC5448 /* Dictionary+Merge.swift */,
 				EA9B36671A30EDBB00CC5448 /* Result.swift */,
+				EA9B36631A30EDBB00CC5448 /* WebJSONService.swift */,
 			);
 			name = WebJSONService;
+			sourceTree = "<group>";
+		};
+		EAA49F371A3A159E00949063 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EA9B36871A31A41000CC5448 /* CoreDataPersistenceStack.swift */,
+				EA9B367F1A30F75000CC5448 /* Pod+Extension.swift */,
+				EAC6937E1A370D2500A4FA99 /* FetchedResultsControllerDataSource.swift */,
+				EA9B36771A30F2C000CC5448 /* Importer.swift */,
+				EAD5B8391A35DCE300D81243 /* Pod.swift */,
+				EA9B36621A30EDBB00CC5448 /* UpdatePodsUseCase.swift */,
+				EA9B367A1A30F68700CC5448 /* PodSpecModel.xcdatamodeld */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		EAC6937B1A370C4B00A4FA99 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				EAE0C95D1A375F2F00577E64 /* PodDetailTableViewController.swift */,
+				EAC6937C1A370C6F00A4FA99 /* PodListViewController.swift */,
+				EAC693801A372E3900A4FA99 /* TableViewFetchedResultsControllerDelegate.swift */,
+				EA9B36491A30ED7B00CC5448 /* Images.xcassets */,
+				EA9B364B1A30ED7B00CC5448 /* LaunchScreen.xib */,
+				EA9B36461A30ED7B00CC5448 /* Main.storyboard */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		EAC693821A3732A000A4FA99 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				EAE0C95B1A37543F00577E64 /* AppBuilder.swift */,
+				EAC693831A3732B700A4FA99 /* UIStoryboardInjector.swift */,
+			);
+			name = DependencyInjection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,16 +305,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAE0C95E1A375F2F00577E64 /* PodDetailTableViewController.swift in Sources */,
 				EAD5B83A1A35DCE300D81243 /* Pod.swift in Sources */,
+				EAC693811A372E3900A4FA99 /* TableViewFetchedResultsControllerDelegate.swift in Sources */,
 				EA9B367C1A30F68700CC5448 /* PodSpecModel.xcdatamodeld in Sources */,
+				EAC6937D1A370C6F00A4FA99 /* PodListViewController.swift in Sources */,
 				EA9B366D1A30EDBB00CC5448 /* Result.swift in Sources */,
 				EA9B366A1A30EDBB00CC5448 /* AppDelegate.swift in Sources */,
 				EA9B36881A31A41000CC5448 /* CoreDataPersistenceStack.swift in Sources */,
-				EA9B366C1A30EDBB00CC5448 /* Dictionary.swift in Sources */,
+				EAE0C95C1A37543F00577E64 /* AppBuilder.swift in Sources */,
+				EA9B366C1A30EDBB00CC5448 /* Dictionary+Merge.swift in Sources */,
 				EA9B36691A30EDBB00CC5448 /* WebJSONService.swift in Sources */,
 				EA9B36781A30F2C000CC5448 /* Importer.swift in Sources */,
-				EA9B366B1A30EDBB00CC5448 /* ViewController.swift in Sources */,
-				EA9B36801A30F75000CC5448 /* Extensions.swift in Sources */,
+				EAC693841A3732B700A4FA99 /* UIStoryboardInjector.swift in Sources */,
+				EAC693791A3616ED00A4FA99 /* ErrorReferenceHandler.swift in Sources */,
+				EAC6937F1A370D2500A4FA99 /* FetchedResultsControllerDataSource.swift in Sources */,
+				EA9B36801A30F75000CC5448 /* Pod+Extension.swift in Sources */,
 				EA9B36681A30EDBB00CC5448 /* UpdatePodsUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,13 +331,14 @@
 			files = (
 				EA9B36701A30EDE700CC5448 /* UpdatePodsUseCase.swift in Sources */,
 				EA9B36891A31A41000CC5448 /* CoreDataPersistenceStack.swift in Sources */,
-				EA9B36851A30F8C400CC5448 /* Extensions.swift in Sources */,
+				EA9B36851A30F8C400CC5448 /* Pod+Extension.swift in Sources */,
 				EA9B36711A30EDE700CC5448 /* WebJSONService.swift in Sources */,
+				EAC6937A1A36178900A4FA99 /* ErrorReferenceHandler.swift in Sources */,
 				EA9B36751A30EDE700CC5448 /* Result.swift in Sources */,
 				EAD5B83B1A35DE2800D81243 /* Pod.swift in Sources */,
-				EA9B366F1A30EDD900CC5448 /* PodsWebJSONServiceTests.swift in Sources */,
+				EA9B366F1A30EDD900CC5448 /* PodsJSONServiceTests.swift in Sources */,
 				EA9B36831A30F85600CC5448 /* Importer.swift in Sources */,
-				EA9B36741A30EDE700CC5448 /* Dictionary.swift in Sources */,
+				EA9B36741A30EDE700CC5448 /* Dictionary+Merge.swift in Sources */,
 				EA9B36821A30F78000CC5448 /* PodTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
