@@ -1,0 +1,20 @@
+PODS:
+  - NSErrorPointerWrapper (0.1.0)
+
+DEPENDENCIES:
+  - NSErrorPointerWrapper (from `https://github.com/mr-v/NSErrorPointerWrapper.git`, branch `pod`)
+
+EXTERNAL SOURCES:
+  NSErrorPointerWrapper:
+    :branch: pod
+    :git: https://github.com/mr-v/NSErrorPointerWrapper.git
+
+CHECKOUT OPTIONS:
+  NSErrorPointerWrapper:
+    :commit: 50bac2cbf13eabbaddabb7c1693110d122097cfa
+    :git: https://github.com/mr-v/NSErrorPointerWrapper.git
+
+SPEC CHECKSUMS:
+  NSErrorPointerWrapper: c584f99bc1a67ab46b3ea2f3c2631bc021478c13
+
+COCOAPODS: 0.36.0.beta.1

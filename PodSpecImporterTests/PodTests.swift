@@ -8,6 +8,7 @@
 
 import XCTest
 import CoreData
+import NSErrorPointerWrapper
 
 class PodTests: XCTestCase {
     var context: NSManagedObjectContext!
@@ -73,7 +74,7 @@ class PodTests: XCTestCase {
     private func makePod() -> Pod? {
         let model = makeCoreDataModel()
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
-        tryWithError { coordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil, error: $0) }
+        tryWithErrorPointer { coordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil, error: $0) }
             .onError {
                 println($0)
                 abort()

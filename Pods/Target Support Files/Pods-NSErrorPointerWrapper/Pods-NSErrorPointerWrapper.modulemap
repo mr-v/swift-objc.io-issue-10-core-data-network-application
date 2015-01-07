@@ -1,0 +1,6 @@
+framework module NSErrorPointerWrapper {
+  umbrella header "Pods-NSErrorPointerWrapper-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "NSErrorPointerWrapper",
+  "version": "0.1.0",
+  "summary": "Wrapper for handling iOS SDK APIs that take in error by reference.",
+  "description": "Set of wrapper functioncs that simplify handling of methods that take in `NSErrorPoint`. Some of the benefits:\n\n- no more declaring that pesky `NSError` variable to pass by reference (use `$0` shorthand argument name in closure passed to wrapper)\n- chaining for success and failure handling\n- streamlined downcasting handling (needed because often the result of those methods is `AnyObject?` instance)\n",
+  "homepage": "https://github.com/mr-v/NSErrorPointerWrapper",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "mr-v": "witold.skibniewski@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/mr-v/NSErrorPointerWrapper.git",
+    "tag": "0.1.0"
+  },
+  "source_files": "NSErrorPointerWrapper"
+}

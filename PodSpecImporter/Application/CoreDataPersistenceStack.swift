@@ -8,6 +8,7 @@
 
 import CoreData
 import UIKit
+import NSErrorPointerWrapper
 
 class PersistenceStack {
     let context: NSManagedObjectContext!
@@ -23,7 +24,7 @@ class PersistenceStack {
 
     private func setupContextWithConcurrencyType(type: NSManagedObjectContextConcurrencyType, model: NSManagedObjectModel, storeURL: NSURL) -> NSManagedObjectContext {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
-        tryWithError { coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: $0) }
+        tryWithErrorPointer { coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: $0) }
             .onError { _ in abort() }
         var context = NSManagedObjectContext(concurrencyType: type)
         context.persistentStoreCoordinator = coordinator
@@ -39,7 +40,7 @@ class PersistenceStack {
         }
         NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationWillTerminateNotification, object: nil, queue: nil) {
             [weak self] _ in
-            tryWithError { self?.context.save($0) }
+            tryWithErrorPointer { self?.context.save($0) }
                 .onError { error in println("termination save error: \(error)") }
             return
         }

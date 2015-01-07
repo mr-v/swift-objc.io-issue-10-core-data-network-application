@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import NSErrorPointerWrapper
 
 class Importer {
     private let context: NSManagedObjectContext
@@ -27,7 +28,7 @@ class Importer {
 
         context.performBlock { [weak self] in
             if let context = self?.context {
-                tryWithError { errorPointer in context.executeFetchRequest(existingSpecsRequest, error: errorPointer) as [Pod] }
+                tryWithErrorPointer(castResultTo: [Pod].self) { context.executeFetchRequest(existingSpecsRequest, error: $0) }
                     .onSuccess { result in
                         var existingPods = [String: Pod]()
                         for pod in result { existingPods[pod.identifier] = pod }

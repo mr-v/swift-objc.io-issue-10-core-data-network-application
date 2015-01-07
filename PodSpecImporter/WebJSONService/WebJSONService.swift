@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NSErrorPointerWrapper
 
 class WebJSONService {
     private let session: NSURLSession
@@ -34,9 +35,9 @@ class WebJSONService {
                 }
             }
 
-            tryWithError{ NSJSONSerialization.JSONObjectWithData(data, options: nil, error: $0) as? NSDictionary }
+            tryWithErrorPointer(castResultTo: NSDictionary.self) { NSJSONSerialization.JSONObjectWithData(data, options: nil, error: $0) }
                 .onError { _ in dispatchError() }
-                .onSuccess { jsonObject in dispatch_async(dispatch_get_main_queue()) { completionHandler(.OK(jsonObject!)) } }
+                .onSuccess { jsonObject in dispatch_async(dispatch_get_main_queue()) { completionHandler(.OK(jsonObject)) } }
         })
         task.resume()
     }
